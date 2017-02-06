@@ -15,6 +15,7 @@ search.addEventListener("keyup", function(evt){
 }, 
 false);
 
+
 //section chat de mensajes
 var chat = document.getElementById("chat");
 var mensaje = document.getElementById("mensajes");
@@ -57,3 +58,4 @@ function agregarMensaje(){
 	chat.scrollTop = chat.scrollHeight;
 	
 }
+// section contactos

@@ -1,4 +1,5 @@
 //section busqueda
+function searchContact(){ 
 var search = document.getElementById("search");
 var contacto = document.getElementsByTagName("h4");
 var forEach = Array.prototype.forEach;
@@ -14,7 +15,7 @@ search.addEventListener("keyup", function(evt){
   });
 }, 
 false);
-
+}
 
 //section chat de mensajes
 var chat = document.getElementById("chat");

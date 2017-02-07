@@ -126,3 +126,21 @@ function actualizarCabeceraChat(_contactName, _imageURL, _estado){
 	chatHeader.getElementsByClassName("w-users-messages")[0].innerHTML = _estado;
 	chatHeader.getElementsByTagName("img")[0].src = _imageURL;
 }
+// El buscador de contactos
+function searchContact(){ 
+var search = document.getElementById("search");
+var contacto = document.getElementsByTagName("h4");
+var forEach = Array.prototype.forEach;
+
+search.addEventListener("keyup", function(evt){
+  var choice = this.value;
+
+  forEach.call(contacto, function(evt){
+      if (evt.innerHTML.toLowerCase().search(choice.toLowerCase()) == -1)
+          evt.parentNode.parentNode.style.display = "none";   
+      else
+         evt.parentNode.parentNode.style.display = "block";        
+  });
+}, 
+false);
+}

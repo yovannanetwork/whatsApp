@@ -9,10 +9,10 @@ function chat(_nombre, _imagen){
 	};
 }
 var dataListaChat = [
-	new chat("Aldo", "image/aldo.jpg"),
-	new chat("Gian", "image/gian.jpg"),
-	new chat("Jose", "image/jose.jpg"),
-	new chat("CodeAcademy", "image/logocodeacademy.png"),
+	new chat("Aldo", "image/aldo.jpg", "hola como estas"),
+	new chat("Gian", "image/gian.jpg", "donde andas"),
+	new chat("Jose", "image/jose.jpg", "jajja seee"),
+	new chat("CodeAcademy", "image/logocodeacademy.png", "vamos bien"),
 ];
 
 //parte visual
@@ -96,10 +96,6 @@ function crearMensaje(_mensaje){
 	elChat.scrollTop = elChat.scrollHeight;
 }
 
-
-function crearLista(){
-	
-}
 //lista de contacto dinamica
 function crearChat(_mensaje){
 	var hora = new Date();
@@ -126,6 +122,12 @@ function actualizarCabeceraChat(_contactName, _imageURL, _estado){
 	chatHeader.getElementsByClassName("w-users-messages")[0].innerHTML = _estado;
 	chatHeader.getElementsByTagName("img")[0].src = _imageURL;
 }
+//Limpiar ventana chats
+function limpiarVentanaChat(){
+	var chatMensaje = document.getElementById("chat");
+	chatMensaje.addEventListener("click", clearWindow);
+}
+
 // El buscador de contactos
 function searchContact(){ 
 var search = document.getElementById("search");

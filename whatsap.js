@@ -23,7 +23,7 @@ function init(){
 function inicioChatLista(){
 	var liListaChat = document.getElementById("lista-chats");
 	for(var i in dataListaChat){
-		var htmlChatItem = '<li>'+
+		var htmlChatItem = '<li draggable="true" ondragstar="inicio()">'+
 		   '<div class="avatar">'+
 		  		'<img src="'+dataListaChat[i].imageURL+'" alt="" class="wh-44">'+
 		  		'<h4 class="w-contact-name">'+dataListaChat[i].nombre+'</h4>'+
@@ -35,7 +35,6 @@ function inicioChatLista(){
 		liListaChat.innerHTML += htmlChatItem;
 	}
 	initChatList();
-	
 }
  // actualizar el contacto el el header
 
@@ -54,13 +53,14 @@ function initChatList(){
 		arrListItems[i].addEventListener("click", onChatItemClick );
 	}
 }
-//llamando el evento para ejecutar la funcion
+//evento click a todo el div 
 function onChatItemClick(evt){
 	//console.log(evt.currentTarget);
 	var contactName = (evt.currentTarget.getElementsByClassName("w-contact-name")[0].textContent);
 	var imgURL = (evt.currentTarget.getElementsByClassName("wh-44")[0].src);
 	console.log("click");
 	actualizarCabeceraChat(contactName, imgURL, "conectado");
+	searchContact();
 }
 //teclear enter
 function onMensajeKey(evt){
@@ -72,6 +72,7 @@ function onMensajeKey(evt){
 		elInputMensajes.value = "";
 	}	
 }
+// 1 funcion crear mensaje
 function crearMensaje(_mensaje){
 	
 	var htmlMensajeIn = '<div class="w-message w-message-in">'+
